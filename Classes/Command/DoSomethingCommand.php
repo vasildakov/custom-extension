@@ -21,7 +21,7 @@ class DoSomethingCommand extends Command
         return Command::SUCCESS;
     }
 
-    public function doAction()
+    public function doAction(): void
     {
     }
 }

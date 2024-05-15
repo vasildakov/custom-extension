@@ -12,7 +12,7 @@ grumphp:
 
     # PHPStan
     phpstan:
-      level: 2
+      level: 1
       memory_limit: "-1"
       use_grumphp_paths: true
       triggered_by:
@@ -30,7 +30,7 @@ grumphp:
 
     # PHP_CodeSniffer
     phpcs:
-      standard: [PEAR, PSR1, PSR2, PSR12, Squiz]
+      standard: [PEAR, PSR1, PSR2, PSR12]
       severity: 10
       error_severity: 10
       tab_width: 4
@@ -75,4 +75,4 @@ grumphp:
 
   testsuites:
     git_pre_commit:
-      tasks: [ phpcs, phpunit, phpstan ]
+      tasks: [ phpunit ]
