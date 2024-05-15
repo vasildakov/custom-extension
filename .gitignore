@@ -1,1 +1,4 @@
 .composer
+var
+.phpunit.cache
+public

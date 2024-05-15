@@ -1,6 +1,6 @@
- // Part 1: Fluid template section
- page.10 = FLUIDTEMPLATE
- page.10 {
+// Part 1: Fluid template section
+page.10 = FLUIDTEMPLATE
+page.10 {
     templateName = TEXT
     templateName {
         cObject = TEXT

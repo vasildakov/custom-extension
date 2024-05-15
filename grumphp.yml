@@ -1,10 +1,78 @@
 # grumphp.yml
-
 grumphp:
+  extensions:
+    - Madikon\GrumphpTypoScriptLint\Extension\Loader
+
   tasks:
-    phpcs:
-      standard: PSR12
+    # Composer
+    composer:
+      file: ./composer.json
+      strict: false
+      no_check_lock: true
+
+    # PHPStan
     phpstan:
-      level: 1
+      level: 2
+      memory_limit: "-1"
+      use_grumphp_paths: true
+      triggered_by:
+        - php
+      ignore_patterns:
+        - public/
+        - .composer/
+        - Tests/
+        - ext_emconf.php
+
+    # PHPUnit
     phpunit:
+      testsuite: Unit
       always_execute: true
+
+    # PHP_CodeSniffer
+    phpcs:
+      standard: [PEAR, PSR1, PSR2, PSR12, Squiz]
+      severity: 10
+      error_severity: 10
+      tab_width: 4
+      report: full
+      triggered_by: [php]
+      whitelist_patterns:
+        - /^Classes\/(.*)/
+
+    # PHP Mess Detector
+    phpmd:
+      whitelist_patterns: []
+      exclude:
+        - public
+        - .composer
+        - Test
+      ruleset: ['cleancode', 'codesize', 'naming']
+      triggered_by: ['php']
+
+    # PHP Copy/Paste Detector
+    phpcpd:
+      directory: ['Classes']
+      exclude: ['.composer']
+      fuzzy: false
+      min_lines: 5
+      min_tokens: 70
+      triggered_by: ['php']
+
+    # TypoScript Lint
+    typoscriptlint:
+      config: "./typoscriptlint-config.yaml"
+      paths:
+        - "Configuration"
+      exclude:
+        - ".composer"
+        - "public"
+      triggered_by:
+        - typoscript
+        - tsconfig
+      format: "compact"
+      fail-on-warnings: true
+      output: "-"
+
+  testsuites:
+    git_pre_commit:
+      tasks: [ phpcs, phpunit, phpstan ]
