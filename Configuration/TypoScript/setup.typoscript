@@ -1,0 +1,48 @@
+@import 'EXT:fluid_styled_content/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:site_package/Configuration/TypoScript/Setup/*.typoscript'
+
+page {
+    10 {
+        dataProcessing {
+            #10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            #20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            10 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            10 {
+                table   = tt_content
+                orderBy = sorting
+                where   = colPos = 0
+                as      = jumbotronContent
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            20 {
+                table   = tt_content
+                orderBy = sorting
+                where   = colPos = 1
+                as      = mainContent
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            30 {
+                table   = tt_content
+                orderBy = sorting
+                where   = colPos = 2
+                as      = footerContent
+            }
+        }
+    }
+}
+
+plugin.tx_sitepackage_productindex {
+    view {
+        templateRootPath = {$plugin.tx_sitepackage.view.templateRootPath}
+        partialRootPath = {$plugin.tx_sitepackage.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_sitepackage.view.layoutRootPath}
+    }
+
+    persistence {
+        storagePid = {$plugin.tx_sitepackage.persistence.storagePid}
+    }
+
+    settings {
+        singleViewPageUid = {$plugin.tx_sitepackage.settings.singleViewPageUid}
+    }
+}

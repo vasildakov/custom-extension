@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+    <div class="container mb-5">
+        <f:for each="{jumbotronContent}" as="contentElement">
+            <div class="row">
+                <div class="col-12 bg-light p-5">
+                    <h1 class="display-3">{contentElement.data.header}</h1>
+                    <f:format.raw>{contentElement.data.bodytext}</f:format.raw>
+                </div>
+            </div>
+        </f:for>
+    </div>
+
+</html>

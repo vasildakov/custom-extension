@@ -1,0 +1,10 @@
+# grumphp.yml
+
+grumphp:
+  tasks:
+    phpcs:
+      standard: PSR12
+    phpstan:
+      level: 1
+    phpunit:
+      always_execute: true
