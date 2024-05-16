@@ -10,7 +10,7 @@ grumphp:
       max_subject_width: 60
       matchers:
         Must contain JIRA issue number: /BMASDFCT-\d+/
-        #Must start with:  /(feat:|chore:)/
+        Must start with:  /(feat:|chore:)/
       case_insensitive: true
       multiline: true
 
