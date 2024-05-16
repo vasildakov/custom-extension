@@ -71,11 +71,10 @@ $tca = [
                 'foreign_table' => 'tx_sitepackage_domain_model_category',
                 'minitems' => 0,
                 'maxitems' => 99,
-            ]
-        ]
+            ],
+        ],
     ],
 ];
-
 
 /*
 $typo3Version = new \TYPO3\CMS\Core\Information\Typo3Version();

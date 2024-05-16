@@ -79,7 +79,6 @@ final class ProductTest extends TestCase
         self::assertCount(0, $categories);
     }
 
-
     public function testItCanSetMultipleCategories(): void
     {
         // arrange

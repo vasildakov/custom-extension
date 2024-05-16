@@ -33,7 +33,6 @@ final class GravatarViewHelperTest extends UnitTestCase
         self::assertInstanceOf(GravatarViewHelper::class, $helper);
     }
 
-
     public function testItCanRenderExpectedString(): void
     {
         // Arrange

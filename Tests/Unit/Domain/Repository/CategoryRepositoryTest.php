@@ -19,7 +19,6 @@ class CategoryRepositoryTest extends TestCase
         $this->objectManager = $this->createMock(ObjectManagerInterface::class);
     }
 
-
     public function testItCanBeCreated(): void
     {
         $repository = new CategoryRepository($this->objectManager);

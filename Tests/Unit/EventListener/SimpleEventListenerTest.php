@@ -29,7 +29,6 @@ final class SimpleEventListenerTest extends TestCase
         self::assertInstanceOf(SimpleEventListener::class, $listener);
     }
 
-
     public function testItCanBeInvokedWithEvent(): void
     {
         $message = 'simple message';

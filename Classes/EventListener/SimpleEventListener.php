@@ -14,8 +14,7 @@ final class SimpleEventListener
 {
     public function __construct(
         private readonly LoggerInterface $logger
-    ) {
-    }
+    ) {}
 
     public function __invoke(SimpleEvent $event): void
     {

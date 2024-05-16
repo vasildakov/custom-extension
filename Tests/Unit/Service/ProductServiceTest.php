@@ -19,7 +19,6 @@ final class ProductServiceTest extends UnitTestCase
         $this->repository = $this->createMock(ProductRepository::class);
     }
 
-
     public function testItCanBeCreated(): void
     {
         $service = new ProductService($this->repository);

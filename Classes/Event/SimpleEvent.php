@@ -10,7 +10,5 @@ final class SimpleEvent
     /**
      * @param string $message
      */
-    public function __construct(public readonly string $message)
-    {
-    }
+    public function __construct(public readonly string $message) {}
 }

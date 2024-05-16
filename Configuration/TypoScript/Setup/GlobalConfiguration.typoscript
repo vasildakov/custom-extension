@@ -1,6 +1,5 @@
 // Part 4: global site configuration
 config {
-    # contentObjectExceptionHandler = 0
 
     # Adjust the title tag to be displayed as “website - page title”
     pageTitleSeparator = -

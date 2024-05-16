@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace VasilDakov\SitePackage\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 
 /**
  * @author Vasil Dakov <vasildakov@gmail.com>
@@ -22,7 +22,6 @@ class Category extends AbstractEntity
      * @Lazy
      */
     protected ObjectStorage $products;
-
 
     public function __construct()
     {
@@ -44,7 +43,6 @@ class Category extends AbstractEntity
     {
         return $this->title;
     }
-
 
     public function getProducts(): ObjectStorage
     {

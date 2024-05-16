@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
-
 defined('TYPO3') or die();
 
 // This makes the plugin selectable in the BE.
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-// extension name, matching the PHP namespaces (but without the vendor)
+    // extension name, matching the PHP namespaces (but without the vendor)
     'SitePackage',
     'ProductIndex',
     'Product Index',

@@ -33,7 +33,7 @@ class ProductRepository extends Repository
 
     public function findPaginated(int $limit, int $offset): QueryResultInterface
     {
-        $offset = ($offset > 1) ? ( ($offset - 1) * $limit ) : 0;
+        $offset = ($offset > 1) ? (($offset - 1) * $limit) : 0;
 
         $query = $this->createQuery();
         $query->setLimit($limit);

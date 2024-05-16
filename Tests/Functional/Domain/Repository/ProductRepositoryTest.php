@@ -3,9 +3,9 @@
 namespace VasilDakov\SitePackage\Tests\Functional\Domain\Repository;
 
 use AllowDynamicProperties;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
-use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use VasilDakov\SitePackage\Domain\Model\Product;
 use VasilDakov\SitePackage\Domain\Repository\ProductRepository;
 
@@ -32,7 +32,6 @@ class ProductRepositoryTest extends FunctionalTestCase
 
         $this->repository = $this->get(ProductRepository::class);
     }
-
 
     public function testItCanFindAllProducts(): void
     {

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace VasilDakov\SitePackage\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use Throwable;
 use TYPO3\CMS\Core\Pagination\SimplePagination;
 use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -24,8 +23,7 @@ final class ProductController extends ActionController
     public function __construct(
         private readonly ProductRepository $products,
         private readonly CategoryRepository $categories,
-    ) {
-    }
+    ) {}
 
     /**
      * @throws NoSuchArgumentException
@@ -35,19 +33,17 @@ final class ProductController extends ActionController
         $itemsPerPage = 4;
 
         $currentPageNumber = $this->request->hasArgument('page')
-            ? (int) $this->request->getArgument('page')
+            ? (int)$this->request->getArgument('page')
             : 1;
 
         $selectedCategory = $this->request->hasArgument('category')
             ? $this->request->getArgument('category')
             : '';
 
-
         $products = $this->products->findAll();
 
         $paginator = new QueryResultPaginator($products, $currentPageNumber, $itemsPerPage);
         $pagination = new SimplePagination($paginator);
-
 
         //dd($products);
 
@@ -62,7 +58,7 @@ final class ProductController extends ActionController
                 'categories'       => $this->categories->findAll(),
                 'paginator'        => $paginator,
                 'pagination'       => $pagination,
-                'products'         => $this->products->findPaginated($itemsPerPage, $currentPageNumber)
+                'products'         => $this->products->findPaginated($itemsPerPage, $currentPageNumber),
             ]
         );
 

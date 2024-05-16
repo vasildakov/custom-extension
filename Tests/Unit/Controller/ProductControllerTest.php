@@ -13,9 +13,9 @@ use Psr\Http\Message\StreamInterface;
 use ReflectionClass;
 use TYPO3\CMS\Extbase\Mvc\RequestInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 use TYPO3Fluid\Fluid\View\ViewInterface;
-use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use VasilDakov\SitePackage\Controller\ProductController;
 use VasilDakov\SitePackage\Domain\Model\Product;
 use VasilDakov\SitePackage\Domain\Repository\CategoryRepository;
@@ -75,7 +75,6 @@ final class ProductControllerTest extends UnitTestCase
 
         return $controller;
     }
-
 
     public function testItCanBeCreated(): void
     {

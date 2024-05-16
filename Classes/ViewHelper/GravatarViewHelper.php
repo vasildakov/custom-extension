@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace VasilDakov\SitePackage\ViewHelper;
 
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithContentArgumentAndRenderStatic;
 use VasilDakov\SitePackage\Domain\Repository\ProductRepository;
 
 /**

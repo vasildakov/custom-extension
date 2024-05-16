@@ -2,6 +2,4 @@
 
 namespace VasilDakov\SitePackage\Service;
 
-interface ProductServiceInterface
-{
-}
+interface ProductServiceInterface {}

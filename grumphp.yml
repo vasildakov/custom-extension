@@ -4,6 +4,13 @@ grumphp:
     - Madikon\GrumphpTypoScriptLint\Extension\Loader
 
   tasks:
+    git_commit_message:
+      allow_empty_message: false
+      max_body_width: 72
+      max_subject_width: 60
+      matchers:
+        Must contain JIRA issue number: /JIRA-\d+/
+
     # Composer
     composer:
       file: ./composer.json
@@ -12,6 +19,7 @@ grumphp:
 
     # PHPStan
     phpstan:
+      configuration: ./phpstan.neon
       level: 1
       memory_limit: "-1"
       use_grumphp_paths: true
@@ -22,6 +30,7 @@ grumphp:
         - .composer/
         - Tests/
         - ext_emconf.php
+        - .php-cs-fixer.dist.php
 
     # PHPUnit
     phpunit:
@@ -35,9 +44,22 @@ grumphp:
       error_severity: 10
       tab_width: 4
       report: full
-      triggered_by: [php]
+      triggered_by: ['php']
       whitelist_patterns:
         - /^Classes\/(.*)/
+
+    phpcsfixer:
+      allow_risky: ~
+      cache_file: ~
+      config: .php-cs-fixer.dist.php
+      #rules:
+      #  '@PSR2': true
+      using_cache: ~
+      config_contains_finder: true
+      verbose: true
+      diff: false
+      triggered_by: ['php']
+
 
     # PHP Mess Detector
     phpmd:
@@ -74,5 +96,15 @@ grumphp:
       output: "-"
 
   testsuites:
+    git_commit_msg:
+      tasks:
+        - git_commit_message
     git_pre_commit:
-      tasks: [ phpunit ]
+      tasks:
+        - composer
+        - phpstan
+        - phpcs
+        - phpmd
+        - phpcpd
+        - phpunit
+        - typoscriptlint

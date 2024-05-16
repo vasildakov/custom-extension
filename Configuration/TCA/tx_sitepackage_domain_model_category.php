@@ -46,8 +46,8 @@ $tca = [
                 'MM_opposite_field' => 'products',
                 'minitems' => 0,
                 'maxitems' => 99,
-            ]
-        ]
+            ],
+        ],
     ],
 ];
 

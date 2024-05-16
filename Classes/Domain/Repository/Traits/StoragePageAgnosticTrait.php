@@ -9,6 +9,10 @@ use TYPO3\CMS\Extbase\Persistence\Generic\QuerySettingsInterface;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
+/**
+ * @phpstan-ignore StaticAccess
+ * @SuppressWarnings(PHPMD)
+ */
 trait StoragePageAgnosticTrait
 {
     public function initializeObject(): void

@@ -36,7 +36,6 @@ class Product extends AbstractEntity
      */
     protected ObjectStorage $categories;
 
-
     public function __construct()
     {
         $this->categories = new ObjectStorage();
