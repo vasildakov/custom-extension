@@ -6,11 +6,12 @@ grumphp:
   tasks:
     git_commit_message:
       allow_empty_message: false
+      enforce_capitalized_subject: false
       max_body_width: 72
       max_subject_width: 60
       matchers:
         Must contain JIRA issue number: /BMASDFCT-\d+/
-        Must start with:  /(feat:|chore:)/
+        Must start with:  /(fix|feat|chore|docs|test):/
       case_insensitive: true
       multiline: true
 
